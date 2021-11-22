@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Layout/Header';
 import Meals from './components/Meals/Meals';
 import CartProvider from './store/CartProvider';
+import Cart from './components/Cart/Cart';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
   return (
     <CartProvider>
       <div className="find_wrapper">
-      {cartIsShown && <div className="find"> Card...</div>}
+      {cartIsShown && <Cart onClose={hideCardHandler}/>}
       </div>
       <Header onShowCart={showCardHandler}/>
       <main>
